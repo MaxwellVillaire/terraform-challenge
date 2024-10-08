@@ -1,0 +1,19 @@
+This is my submission to the CoalFire interview challenge.
+
+Due to time constraints, I have only completed about half of the challenge.
+
+Due to financial constraints, I have chosen to skip step #3 which requires me to create an AWS account 
+(2 actually), which I would be paying for, and deploy all of the infrastructure to it
+
+In order to complete this challenge, I used the coalfire public AWS modules.
+
+I have had no need to reference any documentation other than the official terraform documentation for AWS, and the documentation provided with the Coalfire modules.
+
+There are several things I would change about this solution, namely I would split the project into multiple deployments to limit the blast radius.
+The data can be shared between these separate deployments using terraform_remote_state
+
+I would generally recommend further modularizing for example the EC2 instance, so that similar instances can be deployed using default variables, reducing the need to re-define each variable
+in the event you will want to deploy similar instances in the future
+
+I spent about 90 minutes getting familiar with the Coalfire modules, setting up the repository, and testing.
+The provided example in your public KMS module does not work.
